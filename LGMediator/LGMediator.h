@@ -17,12 +17,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LGMediator : NSObject
 
+//Target Action
 +(__kindof UIViewController *)detailViewWithUrl:(NSString *)url;
 
+//URL Scheme
 typedef void(^LGMediatorProcessBlcok)(NSDictionary *);
 +(void)registerScheme:(NSString *)scheme processBlcok:(LGMediatorProcessBlcok)processBlock;
 +(void)openUrl:(NSString *)url params:(NSDictionary *)params;
 
+//Protocol Class
 +(void)registerProtocol:(Protocol *)proto cls:(Class)cls;
 +(Class)classForProtocol:(Protocol *)proto;
 
